@@ -4,4 +4,11 @@ from src.task_decider import task_decider
 
 
 class TestTaskDecider(unittest.TestCase):
-    pass
+    
+    def setUp(self):
+        self.dishes = Task("Wash Dishes", 10)
+        self.dinner = Task("Cook Dinner", 40)
+        self.windows = Task("Clean Windows", 60)
+
+    def test_class_has_discription(self):
+        self.assertEqual("Wash Dishes", self.dishes.description)
