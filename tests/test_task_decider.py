@@ -59,3 +59,6 @@ class TestTaskDecider(unittest.TestCase):
 
     def test_clothes_over_dinner(self):
         self.assertEqual("Wash Clothes", task_decider(self.clothes, self.dinner))
+
+    def test_clothes_over_windows(self):
+        self.assertEqual("Wash Clothes", task_decider(self.clothes, self.windows))
