@@ -17,16 +17,24 @@ class TestTaskDecider(unittest.TestCase):
         self.assertEqual(40, self.dinner.duration)
 
     def test_dishes_over_dinner(self):
-        self.assertEqual("Wash Dishes", task_decider("Wash Dishes", "Cook Dinner"))
+        self.assertEqual("Wash Dishes", task_decider(self.dishes, self.dinner))
+    
     
     def test_dishes_over_dinner_flipped(self):
-        self.assertEqual("Wash Dishes", task_decider("Cook Dinner", "Wash Dishes"))
+        self.assertEqual("Wash Dishes", task_decider(self.dinner, self.dishes))
 
-    def test_dinner_over_windows(self):
-        self.assertEqual("Cook Dinner", task_decider("Cook Dinner", "Clean Windows"))
     
-    def test_dinner_over_windows_flipped(self):
-        self.assertEqual("Cook Dinner", task_decider("Clean Windows", "Cook Dinner"))
+    def test_dinner_over_windows(self):
+        self.assertEqual("Cook Dinner", task_decider(self.dinner, self.windows))
 
+     
+    def test_dinner_over_windows_flipped(self):
+        self.assertEqual("Cook Dinner", task_decider(self.windows, self.dinner))
+
+    
     def test_windows_over_dishes(self):
-        self.assertEqual("Clean Windows", task_decider("Clean Windows", "Wash Dishes"))
+        self.assertEqual("Clean Windows", task_decider(self.windows, self.dishes))
+
+    
+    def test_windows_over_dishes_flipped(self):
+        self.assertEqual("Clean Windows", task_decider(self.dishes, self.windows))
