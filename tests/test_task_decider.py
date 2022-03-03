@@ -19,4 +19,11 @@ class TestTaskDecider(unittest.TestCase):
     def test_dishes_over_dinner(self):
         self.assertEqual("Wash Dishes", task_decider("Wash Dishes", "Cook Dinner"))
     
-    def test_
+    def test_dishes_over_dinner_flipped(self):
+        self.assertEqual("Wash Dishes", task_decider("Cook Dinner", "Wash Dishes"))
+
+    def test_dinner_over_windows(self):
+        self.assertEqual("Cook Dinner", task_decider("Cook Dinner", "Clean Windows"))
+    
+    def test_dinner_over_windows_flipped(self):
+        self.assertEqual("Cook Dinner", task_decider("Clean Windows", "Cook Dinner"))
