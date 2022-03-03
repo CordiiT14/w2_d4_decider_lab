@@ -15,3 +15,8 @@ class TestTaskDecider(unittest.TestCase):
     
     def test_class_has_duration(self):
         self.assertEqual(40, self.dinner.duration)
+
+    def test_dishes_over_dinner(self):
+        self.assertEqual("Wash Dishes", task_decider("Wash Dishes", "Cook Dinner"))
+    
+    def test_
