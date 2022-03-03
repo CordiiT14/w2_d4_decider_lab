@@ -48,5 +48,8 @@ class TestTaskDecider(unittest.TestCase):
     def test_dinner_over_ironing(self):
         self.assertEqual("Cook Dinner", task_decider(self.dinner, self.ironing))
 
-    def test_dinner_over_ironing(self):
-        self.assertEqual("Cook Dinner", task_decider(self.dinner, self.ironing))
+    def test_windows_over_ironing(self):
+        self.assertEqual("Clean Windows", task_decider(self.windows, self.ironing))
+
+    def test_ironing_over_clothes(self):
+        self.assertEqual("Do Ironing", task_decider(self.ironing, self.clothes))
