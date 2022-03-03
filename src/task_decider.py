@@ -10,5 +10,7 @@ def task_decider(task1, task2):
         return "Cook Dinner"
     elif ("Do Ironing" in task_options and "Wash Clothes" in task_options) or ("Do Ironing" in task_options and "Wash Dishes" in task_options):
         return "Do Ironing"
+    elif ("Wash Clothes" in task_options and "Cook Dinner" in task_options):
+        return "Wash Clothes"
     else:
         return "Clean Windows"
